@@ -1,0 +1,12 @@
+%META:TOPICINFO{author="LukasResch" comment="reprev" date="1378940477" format="1.1" reprev="1" version="2"}%
+<!--
+   * Set ALLOWTOPICCHANGE = %URLPARAM{"topicparent"}%
+   * Set ALLOWTOPICRENAME = %URLPARAM{"topicparent"}%
+-->
+---+!! %TOPIC%
+
+%TABLE{"headerrows="1"}%
+%EDITTABLE{format="| row, -1| text, 20 | text, 6 | label, 0, %SERVERTIME{"$day $mon $year $hour:$min"}% |"}%%STARTINCLUDE%
+| *#* | *Article* | *Amount* | *Date* |
+
+ %STOPINCLUDE% Sum: %CALC{"$SUM(R2:C3..R$ROW(0):C3)"}%

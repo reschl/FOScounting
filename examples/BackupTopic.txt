@@ -1,0 +1,24 @@
+%META:TOPICINFO{author="LukasResch" comment="save topic" date="1380658579" format="1.1" reprev="2" version="3"}%
+%META:TOPICPARENT{name="WebHome"}%
+<!--
+   * Set ALLOWTOPICCHANGE = AdminGroup
+   * Set ALLOWTOPICRENAME = AdminGroup
+-->
+
+---+!! Abrechnung
+
+<!--
+%INCLUDE{"ExampleUser1ListTopic"}%
+%CALC{"$SET( user1 ,$SUM(R2:C3..R$ROW(0):C3))"}%
+
+%INCLUDE{"ExampleUser2ListTopic"}%
+%CALC{"$SET( florian,$SUM(R2:C3..R$ROW(0):C3))"}%
+
+-->
+
+
+| [[ExampleUser1][ExampleUser1]] | [[ ExampleUser2 ][ExampleUser2]] | *Sum* | per Person |
+|  %CALC{"$GET(user1)"}%  |  %CALC{"$GET(user2)"}%  |  %CALC{"$SUM($LEFT())"}%  |  %CALC{"$ROUND($EVAL($T(R2:C5)/4), 2)"}%  |
+|  %CALC{"$IF($EVAL($T(R2:C1) - $T(R2:C6)) < 0, %RED%$EVAL($T(R2:C1) - $T(R2:C6))%ENDCOLOR%, $EVAL($T(R2:C1) - $T(R2:C6)))"}%  |  %CALC{"$IF($EVAL($T(R2:C2) - $T(R2:C6)) < 0, %RED%$EVAL($T(R2:C2) - $T(R2:C6))%ENDCOLOR%, $EVAL($T(R2:C2) - $T(R2:C6)))"}%  |
+
+%DATE%
